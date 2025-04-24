@@ -79,6 +79,36 @@
         box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
       }
     </style>
+    <style>
+      .object-3d {
+        position: absolute;
+        background-size: cover;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+      }
+    
+      /* Hover effect for each object */
+      .object-3d:hover {
+        transform: translateY(-10px) scale(1.1) rotateY(15deg);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        filter: brightness(1.2);
+      }
+    
+      /* Specific hover styles for each object */
+      #obj1:hover {
+        transform: translateY(-10px) scale(1.1) rotateY(15deg);
+        box-shadow: 0 8px 15px rgba(231, 0, 35, 0.719); /* Light pink shadow */
+      }
+    
+      #obj2:hover {
+        transform: translateY(-20px) scale(1.1) rotateY(20deg);
+        box-shadow: 0 8px 15px rgba(206, 77, 54, 0.856); /* Light red shadow */
+      }
+    
+      #obj3:hover {
+        transform: translateY(-10px) scale(1.1) rotateY(-15deg);
+        box-shadow: 0 8px 15px rgba(224, 210, 6, 0.747); /* Light green shadow */
+      }
+    </style>
   </head>
   <body class="min-h-screen flex justify-center items-center p-4">
     <div
@@ -277,45 +307,6 @@
     
       window.addEventListener("click", playMusic);
     </script>
-    <script>
-      
-      // Make 3D objects draggable and rotate on drag
-      const objects = document.querySelectorAll(".object-3d");
-      let activeObj = null;
-      let startX, startY;
-      let currentX = 0,
-        currentY = 0;
-
-      objects.forEach((obj) => {
-        obj.addEventListener("pointerdown", (e) => {
-          activeObj = obj;
-          startX = e.clientX;
-          startY = e.clientY;
-          obj.setPointerCapture(e.pointerId);
-        });
-
-        obj.addEventListener("pointermove", (e) => {
-          if (!activeObj) return;
-          const dx = e.clientX - startX;
-          const dy = e.clientY - startY;
-          currentX = dx;
-          currentY = dy;
-          // Rotate object based on drag distance
-          activeObj.style.transform = `rotateY(${dx}deg) rotateX(${-dy}deg)`;
-        });
-
-        obj.addEventListener("pointerup", (e) => {
-          if (!activeObj) return;
-          activeObj.releasePointerCapture(e.pointerId);
-          activeObj = null;
-        });
-
-        obj.addEventListener("pointercancel", (e) => {
-          if (!activeObj) return;
-          activeObj.releasePointerCapture(e.pointerId);
-          activeObj = null;
-        });
-      });
-    </script>
+   
   </body>
 </html>
