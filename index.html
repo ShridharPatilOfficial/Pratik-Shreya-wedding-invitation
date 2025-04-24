@@ -103,6 +103,14 @@
         transform: translateY(-20px) scale(1.1) rotateY(20deg);
         box-shadow: 0 8px 15px rgba(206, 77, 54, 0.856); /* Light red shadow */
       }
+      #test:hover {
+        transform: translateY(-10px) scale(1.1) rotateY(10deg);
+        box-shadow: 0 8px 15px rgba(224, 191, 0, 0.911); /* Light red shadow */
+      }
+      #test2:hover {
+        transform: translateY(-5px) scale(1.0) rotateY(10deg);
+        box-shadow: 0 8px 15px rgba(248, 8, 8, 0.733); /* Light red shadow */
+      }
     
       #obj3:hover {
         transform: translateY(-10px) scale(1.1) rotateY(-15deg);
@@ -112,7 +120,7 @@
   </head>
   <body class="min-h-screen flex justify-center items-center p-4">
     <div
-      class="max-w-[400px] w-full bg-[rgba(255,255,255,0.3)] backdrop-blur-sm rounded-lg shadow-lg relative overflow-hidden">
+      class="max-w-[400px] w-full bg-[rgba(255,255,255,0.3)] backdrop-blur-sm rounded-lg shadow-lg relative overflow-hidden" >
       <!-- Top floral hanging -->
       <img
         alt="Floral hanging decoration with green leaves and pink flowers at the top of the invitation"
@@ -122,8 +130,8 @@
         style="height: 150px"
         width="400"/>
       <div
-        class="px-6 pb-6 pt-2 text-center text-[#3a4a1a]"
-        style=""
+        class="px-6 pb-6 pt-2 text-center text-[#3a4a1a]" id="test2"
+       
         id="invitation-text" >
         <p
           class="font-[Great Vibes] text-[52px] leading-tight mb-1"
@@ -166,7 +174,7 @@
       </div>
       <!-- Haldi Ceremony Section -->
       <div
-        class="px-6 pt-6 pb-4 text-center text-[#3a4a1a] border-2 border-yellow-400 rounded-lg shadow-md mb-4"
+        class="px-6 pt-6 pb-4 text-center text-[#3a4a1a] border-2 border-yellow-400 rounded-lg shadow-md mb-4 " id="test"
       >
         <p
           class="font-[Great Vibes] text-[40px] leading-tight mb-1"
