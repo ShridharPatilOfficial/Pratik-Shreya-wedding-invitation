@@ -228,8 +228,21 @@
         width="400"
       />
     </div>
-
+    <audio id="bg-music" loop>
+      <source src="Mangalashtak.mp3" type="audio/mp3">
+    </audio>
+    
     <script>
+      function playMusic() {
+        const audio = document.getElementById("bg-music");
+        audio.play();
+        window.removeEventListener("click", playMusic);
+      }
+    
+      window.addEventListener("click", playMusic);
+    </script>
+    <script>
+      
       // Make 3D objects draggable and rotate on drag
       const objects = document.querySelectorAll(".object-3d");
       let activeObj = null;

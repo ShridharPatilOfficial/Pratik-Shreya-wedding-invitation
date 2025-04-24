@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autoplay Background Music</title>
+</head>
+<body>
+
+  <!-- Hidden audio tag -->
+  <audio id="bg-music" loop>
+    <source src="Mangalashtak.mp3" type="audio/mp3">
+  </audio>
+  
+  <script>
+    function playMusic() {
+      const audio = document.getElementById("bg-music");
+      audio.play();
+      window.removeEventListener("click", playMusic);
+    }
+  
+    window.addEventListener("click", playMusic);
+  </script>
+  
+  
+
+
+</body>
+</html>
