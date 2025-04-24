@@ -230,8 +230,25 @@
     </div>
     <audio id="bg-music" loop>
       <source src="Mangalashtak.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
     </audio>
     
+    <button id="toggleBtn">▶️ Pause Audio</button>
+    
+    <script>
+      const audio = document.getElementById("bg-music");
+      const btn = document.getElementById("toggleBtn");
+    
+      btn.addEventListener("click", () => {
+        if (audio.paused) {
+          audio.play();
+          btn.textContent = "⏸️ Pause";
+        } else {
+          audio.pause();
+          btn.textContent = "▶️ Play";
+        }
+      });
+    </script>
     <script>
       function playMusic() {
         const audio = document.getElementById("bg-music");
